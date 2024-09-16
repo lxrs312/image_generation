@@ -166,3 +166,6 @@ cython_debug/
 *.ttf
 
 *.png
+
+# Except for the ones in the 'tests' directory
+!tests/**/*.png
