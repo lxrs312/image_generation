@@ -13,7 +13,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.12'  # You can specify other versions as needed
+        python-version: '3.12'
 
     - name: Install dependencies
       run: |
@@ -22,4 +22,5 @@ jobs:
 
     - name: Run tests
       run: |
-        python -m unittest discover -s . -p "test_*.py"
+        python -m unittest discover -s tests -p "test_*.py" -v
+
