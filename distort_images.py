@@ -121,3 +121,19 @@ def distortion_run(iterations: int, images_dict: dict, output_path: str) -> None
                 image.save(f"{output_path_file}/{i}.png")
             except Exception as e:
                 logger.error(f"Error distorting image {i} for letter '{letter}': {e}")
+
+
+image = cv2.imread('tests/test_image.png')
+img_offset = _offset_image(image, 10, -10)
+img_offset = Image.fromarray(img_offset)
+img_horizontally = _horizontally(image, 8)
+img_horizontally = Image.fromarray(img_horizontally)
+img_vertically = _vertically(image, 8)
+img_vertically = Image.fromarray(img_vertically)
+img_rotate = _rotate_image(image, 30)
+img_rotate = Image.fromarray(img_rotate)
+
+img_offset.save("img_offset.png")
+img_horizontally.save("img_horizontally.png")
+img_vertically.save("img_vertically.png")
+img_rotate.save("img_rotate.png")
