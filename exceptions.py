@@ -1,0 +1,2 @@
+class NoFontFoundError(Exception):
+    pass
