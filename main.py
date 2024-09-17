@@ -14,7 +14,9 @@ DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 OUTPUT_PATH_DISTORTION_LETTERS = os.path.join(DIR_PATH, "output_distortions")
 FONTS_PATH = os.path.join(DIR_PATH, "fonts")
 
+# Change this
 LETTER_LIST = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+SIMULATION_RUNS = 10
 
 CLEAR_OUTPUT = True
 
@@ -61,7 +63,7 @@ def run():
                 continue
 
             # Create distorted images
-            distortion_run(10, default_letter_dict, font_specific_output_path_distorted)
+            distortion_run(SIMULATION_RUNS, default_letter_dict, font_specific_output_path_distorted)
 
         except Exception as e:
             logger.error(f"Error processing font {font}: {e}")
